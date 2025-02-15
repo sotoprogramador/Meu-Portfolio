@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.7rem;
+    margin-left: 5rem;
+    opacity: 0;
+    animation: moveside 1s ease forwards;
+    transition: all .3s;
+    color: white;
+}
+
+@keyframes moveside {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .4rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5rem;
+    gap: 3rem;
+    padding: .6rem;
+}
+
+nav ul li {
+    font-size: 1.7rem;
+    opacity: 0;
+    animation: moveup .5s ease forwards;
+    animation-delay: calc(.2s * var(--v));
+    transition: all .3s;
+    color: white;
+}
+
+@keyframes moveup {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul li:hover {
+    color: rgb(65, 171, 212);
+    cursor: pointer;
+
+}
+
+/* navigation over  */
+.main {
+    width: 100%;
+    height: 90vh;
+    padding: 1.2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1.2rem 2rem 4rem;
+    margin-left: 3rem;
+    color: white;
+}
+
+h3 {
+    font-size: 2.2rem;
+    opacity: 0;
+    animation: moveup .5s .6s ease forwards;
+    transition: all .3s;
+}
+
+h3:nth-child(3) {
+    animation-delay: .8s;
+}
+
+.change {
+    color: rgb(65, 171, 212);
+    filter: drop-shadow(0px 0px 30px rgb(65, 171, 212));
+
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin: .5rem .5rem .5rem 0rem;
+    opacity: 0;
+    animation: moveside 1s .8s ease forwards;
+    transition: all .3s;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: .5rem 1rem .5rem 0rem;
+    text-align: justify;
+    padding-right: 2rem;
+    animation: moveside 1s .5s ease forwards;
+    opacity: 0;
+    color: white;
+
+}
+
+.social {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    margin-bottom: .5rem;
+    gap: .5rem;
+}
+
+.icon {
+    border-radius: 50%;
+    padding: .6rem .7rem .6rem .7rem ;
+    border: 1px solid rgb(65, 171, 212);
+    color: rgb(65, 171, 212);
+    box-shadow: 0px 0px 20px rgb(65, 171, 212);
+    opacity: 0;
+    animation: moveup .5s ease forwards;
+    animation-delay: calc(.2s * var(--v));
+    transition:all .3s;
+    cursor: pointer;
+}
+.icon:hover{
+    background-color: rgb(65, 171, 212) ;
+    filter: drop-shadow(0px 0px 20px rgb(65, 171, 212));
+    color: black;
+
+}
+
+button {
+    font-size: 1.5rem;
+    padding: .2rem 1rem .2rem 1rem;
+    border-radius: 15px;
+    margin-top: .3rem;
+    opacity: 0;
+    animation: downtotop .5s .6s ease forwards;
+    transition: all .3s;
+    filter: drop-shadow(0px 0px 30px rgb(65, 171, 212));
+    background-color: transparent;
+    border: 1px solid rgb(65, 171, 212);
+    color: rgb(65, 171, 212);
+    transition:all .3s;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(65, 171, 212) ;
+    filter: drop-shadow(0px 0px 50px rgb(65, 171, 212));
+    color: black;
+
+}
+@keyframes downtotop {
+    0% {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    margin-left: 50%;
+    float: right;
+    position:absolute;
+    top: 15px;
+    right: 15px;
+}
+.img img{
+     /* border-radius: 50%;
+    box-shadow: 10px 10px 0px rgb(65, 171, 212);
+    opacity: 0; */
+    animation: zoomin 1s ease forwards, floatImage 4s ease-in-out infinite ;
+    animation-delay: 1.3s, 3s;
+    /* transition: all .3s;
+    float: right;
+    position:absolute;
+    top: 15px;
+    right: 15px; */
+
+    
+      position: absolute;
+      top: 150px;   /* Ajuste essa distância conforme necessário */
+      right: 150px; /* Ajuste essa distância conforme necessário */
+      border-radius: 50%; 
+      border: 8px solid #00bfff; /* Borda azul para destacar */
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      justify-content: center;
+      
+    }
+
+@keyframes zoomin{
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage{
+    0% {
+        transform: translateY(0);
+        
+    }
+    50% {
+        transform: translateY(-24px)
+    }
+
+    100% {
+        transform: translateY(0);
+      
+    }
+}
+
+a:hover{ color: aqua;}
+a:active{ color: rgb(65, 171, 212);}
+
+/* tony */
+
+/* Instagram link 👉 https://www.instagram.com/antonio.manuel.soto?igsh=MTBtMmxrYTN2MHR2cw==
+
+Telegram link 👉  https://t.me/SotoAntonioManuel */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: #060606;
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+#cards {
+  width: 70%;
+  padding-inline: 20px;
+  display: flex;
+  
+  gap: 30px;
+}
+
+.card {
+  min-width: 200px;
+  height: 350px;
+  flex: 1 1 250px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  position: relative;
+}
+
+#cards:hover > .card {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--color) / 1),
+    rgba(255, 255, 255, 0.12) 40%
+  );
+}
+
+.card-content {
+  position: absolute;
+  inset: 1px;
+  background-color: #131315;
+  border-radius: inherit;
+}
+
+.card:nth-child(1) {
+  --color: 348 80% 60%;
+}
+.card:nth-child(2) {
+  --color: 0 0% 100%;
+}
+.card:nth-child(3) {
+  --color: 220 100% 35%;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    500px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--color) / 0.35),
+    transparent 40%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 2;
+}
+
+#cards:hover > .card::before {
+  opacity: 1;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.card-content > i {
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card-content > p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card-content > a {
+  width: 90%;
+  padding-block: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+.card-content > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.conteiner {
+    max-width: 1000px;
+    margin: auto;
+}
