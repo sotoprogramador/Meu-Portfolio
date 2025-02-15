@@ -216,6 +216,7 @@ button:hover{
 
     
       position: absolute;
+      position: fixed;
       top: 150px;   /* Ajuste essa distância conforme necessário */
       right: 150px; /* Ajuste essa distância conforme necessário */
       border-radius: 50%; 
